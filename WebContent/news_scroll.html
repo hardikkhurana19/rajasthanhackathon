@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>News</title>
+
+<base target="_parent">
+
+<link rel="stylesheet" href="news_scroll.css" type="text/css">
+
+</head>
+
+<body class="news-scroll" onMouseover="scrollspeed=0" onMouseout="scrollspeed=current" OnLoad="NewsScrollStart();">
+
+
+<!-- START NEWS FEED -->
+<div id="NewsDiv">
+<div class="scroll-text-if">
+
+<!-- SCROLLER CONTENT STARTS HERE -->
+
+
+
+
+
+
+<span class="scroll-title-if">
+ MAGICIAN OF AMLAS<br>
+</span>
+
+ His passion to uproot the conventional transformed a common fruit - amla or gooseberry - into a highly in-demand commercial success.
+
+ 
+
+<br><br>
+
+
+
+
+
+
+<span class="scroll-title-if">
+THE PATIDARS OF JHALAWAR<br>
+</span>
+
+The yield under their polyhouse multiplied up to 4 times, brought to them with a bumper crop of cucumber in the previous year, accounting to a profit of 5 lacs
+
+ 
+
+<br><br>
+
+
+
+
+
+
+<span class="scroll-title-if">
+THE STORY OF MEDICINAL CROPS<br>
+</span>
+
+He sells Tulsi in Neemuch mandi which he harvests after three months of planting
+
+ 
+
+<br><br>
+
+
+
+
+
+
+<span class="scroll-title-if">
+THE PATIDARS OF UDAIPUR
+<br>
+</span>
+
+The yield under their polyhouse multiplied up to 4 times, brought to them with a bumper crop of cucumber in the previous year, accounting to a profit of 5 lacs
+
+
+
+<br>
+
+
+
+
+
+
+<!-- END SCROLLER CONTENT -->
+
+</div>
+</div>
+<!-- END NEWS FEED -->
+
+
+
+
+<!-- YOU DO NOT NEED TO EDIT BELOW THIS LINE -->
+
+<script type="text/javascript">
+
+
+var startdelay 		= 2; 		// START SCROLLING DELAY IN SECONDS
+var scrollspeed		= 1.1;		// ADJUST SCROLL SPEED
+var scrollwind		= 1;		// FRAME START ADJUST
+var speedjump		= 30;		// ADJUST SCROLL JUMPING = RANGE 20 TO 40
+var nextdelay		= 0; 		// SECOND SCROLL DELAY IN SECONDS 0 = QUICKEST
+var topspace		= "2px";	// TOP SPACING FIRST TIME SCROLLING
+var frameheight		= 176;		// IF YOU RESIZE THE CSS HEIGHT, EDIT THIS HEIGHT TO MATCH
+
+
+current = (scrollspeed);
+
+
+function HeightData(){
+AreaHeight=dataobj.offsetHeight
+if (AreaHeight===0){
+setTimeout("HeightData()",( startdelay * 1000 ))
+}
+else {
+ScrollNewsDiv()
+}}
+
+function NewsScrollStart(){
+dataobj=document.all? document.all.NewsDiv : document.getElementById("NewsDiv")
+dataobj.style.top=topspace
+setTimeout("HeightData()",( startdelay * 1000 ))
+}
+
+function ScrollNewsDiv(){
+dataobj.style.top=scrollwind+'px';
+scrollwind-=scrollspeed;
+if (parseInt(dataobj.style.top)<AreaHeight*(-1)) {
+dataobj.style.top=frameheight+'px';
+scrollwind=frameheight;
+setTimeout("ScrollNewsDiv()",( nextdelay * 1000 ))
+}
+else {
+setTimeout("ScrollNewsDiv()",speedjump)
+}}
+
+
+</script>
+
+
+</body>
+</html>
